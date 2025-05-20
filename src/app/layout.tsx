@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url: "https://byamukama2026.com",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://byamukama2026.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Henry Byamukama Katabazi",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Henry Byamukama Katabazi | A New Vision for Uganda",
     description: "Official campaign website for Henry Byamukama Katabazi, presidential candidate for Uganda.",
-    images: ["/og-image.jpg"],
+    images: ["https://byamukama2026.com/og-image.jpg"],
   },
   themeColor: "#000000",
 };
