@@ -380,7 +380,7 @@ export default function Campaign() {
       {/* Call to Action */}
       <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Join the Movement</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Join the Campaign</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             As Uganda stands at the crossroads of 2026, the Byamukama campaign offers a roadmap to a future where transparency, trust, and technology empower the nation's greatest asset – its people – to reach new heights.
           </p>
