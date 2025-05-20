@@ -390,7 +390,7 @@ export default function About() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-secondary text-primary">
+      <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Henry&apos;s Vision for Uganda</h2>
@@ -400,13 +400,13 @@ export default function About() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/manifesto"
-                className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 text-center"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 text-center"
               >
                 Read the Manifesto
               </Link>
               <Link 
                 href="/contact"
-                className="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 text-center"
+                className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 text-center border-2 border-white"
               >
                 Get Involved
               </Link>

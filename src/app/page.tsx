@@ -19,30 +19,46 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/70 z-10"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-block bg-secondary/90 px-4 py-2">
-              <p className="text-xl font-medium text-primary">PRESIDENTIAL CAMPAIGN 2026</p>
+            <div className="mb-6 inline-block bg-white/90 px-4 py-2 border-l-4 border-blue-600">
+              <p className="text-xl font-medium text-black">PRESIDENTIAL CAMPAIGN 2026</p>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              FORWARD <span className="text-secondary">UGANDA</span>
-            </h1>
-            <div className="bg-black/40 p-4 mb-8 border-l-4 border-secondary">
+           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+  FORWARD{' '}
+  <span className="text-white drop-shadow-[0_0_10px_rgb(56,189,248)]">
+    UGANDA
+  </span>
+</h1>
+
+
+            <div className="bg-black/40 p-4 mb-8 border-l-4 border-white">
               <p className="text-white italic text-xl">
                 "I am not running against our past, I am running towards our future."
               </p>
               <p className="text-white text-lg mt-2">— Henry Byamukama Katabazi</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                href="/manifesto"
-                className="bg-secondary text-primary text-center py-4 px-8 text-lg font-bold hover:bg-opacity-90 transition-all rounded-md"
-              >
-                Read His Vision
-              </Link>
+              <Link
+  href="/manifesto"
+  className="
+    bg-black/50         /* semi-transparent black background */
+    backdrop-blur-md    /* only blurs the backdrop */
+    text-white
+    text-center
+    py-4 px-8
+    text-lg font-bold
+    hover:bg-black/70
+    transition
+    rounded-md
+  "
+>
+  Read His Vision
+</Link>
+
               <Link 
                 href="/contact"
-                className="bg-white text-black text-center py-4 px-8 text-lg font-bold hover:bg-opacity-90 transition-all rounded-md"
+                className="bg-white text-black text-center py-4 px-8 text-lg font-bold hover:bg-white/90 transition-all rounded-md border-2 border-white"
               >
-                Join the Movement
+                Join Hands
               </Link>
             </div>
           </div>
@@ -59,19 +75,19 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3">Faith</h3>
               <p className="text-gray-700 dark:text-gray-300">
                 Grounded in Christian values of integrity and compassion, Henry Katabazi has preached unity and led by example through community outreach programs.
               </p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3">Service</h3>
               <p className="text-gray-700 dark:text-gray-300">
                 As a pastor, philanthropist, media executive, and social entrepreneur, Henry has dedicated his life to uplifting others.
               </p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3">Leadership</h3>
               <p className="text-gray-700 dark:text-gray-300">
                 With 30+ years of leadership experience at community and international levels, Henry brings proven expertise to tackle Uganda's challenges.
@@ -93,7 +109,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col gap-6">
               <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center flex-shrink-0">
                   <span className="font-bold">1</span>
                 </div>
                 <div>
@@ -104,7 +120,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center flex-shrink-0">
                   <span className="font-bold">2</span>
                 </div>
                 <div>
@@ -115,7 +131,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center flex-shrink-0">
                   <span className="font-bold">3</span>
                 </div>
                 <div>
@@ -126,7 +142,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden">
+            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/henry-color-portrait.jpeg"
                 alt="Henry Katabazi"
@@ -148,51 +164,63 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/30">
               <h3 className="text-xl font-bold mb-3">Education</h3>
               <p className="opacity-90 mb-4">
                 Quality education for every child, increasing budget allocation to 15% and tackling dropout rates.
               </p>
-              <Link href="/manifesto#education" className="text-secondary font-medium hover:underline">Learn more →</Link>
+              <Link href="/manifesto#education" className="text-white font-medium hover:underline flex items-center">
+                Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/30">
               <h3 className="text-xl font-bold mb-3">Poverty Alleviation</h3>
               <p className="opacity-90 mb-4">
                 Lifting families out of poverty through social protection and community development.
               </p>
-              <Link href="/manifesto#poverty" className="text-secondary font-medium hover:underline">Learn more →</Link>
+              <Link href="/manifesto#poverty" className="text-white font-medium hover:underline flex items-center">
+                Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/30">
               <h3 className="text-xl font-bold mb-3">Economic Growth</h3>
               <p className="opacity-90 mb-4">
                 Industrialization, value addition, and support for SMEs to create prosperity for all Ugandans.
               </p>
-              <Link href="/manifesto#economy" className="text-secondary font-medium hover:underline">Learn more →</Link>
+              <Link href="/manifesto#economy" className="text-white font-medium hover:underline flex items-center">
+                Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/30">
               <h3 className="text-xl font-bold mb-3">Youth Empowerment</h3>
               <p className="opacity-90 mb-4">
                 Skills development, entrepreneurship support, and job creation for our young population.
               </p>
-              <Link href="/manifesto#youth" className="text-secondary font-medium hover:underline">Learn more →</Link>
+              <Link href="/manifesto#youth" className="text-white font-medium hover:underline flex items-center">
+                Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/30">
               <h3 className="text-xl font-bold mb-3">Financial Inclusion</h3>
               <p className="opacity-90 mb-4">
                 Banking the unbanked through digital finance and expanded access to credit and insurance.
               </p>
-              <Link href="/manifesto#finance" className="text-secondary font-medium hover:underline">Learn more →</Link>
+              <Link href="/manifesto#finance" className="text-white font-medium hover:underline flex items-center">
+                Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/30">
               <h3 className="text-xl font-bold mb-3">Infrastructure</h3>
               <p className="opacity-90 mb-4">
                 Roads, railways, electricity, and water systems to connect and power all of Uganda.
               </p>
-              <Link href="/manifesto#infrastructure" className="text-secondary font-medium hover:underline">Learn more →</Link>
+              <Link href="/manifesto#infrastructure" className="text-white font-medium hover:underline flex items-center">
+                Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </div>
           </div>
           <div className="mt-12 text-center">
-            <Link href="/manifesto" className="btn-secondary">Read Full Manifesto</Link>
+            <Link href="/manifesto" className="bg-white text-primary px-8 py-3 rounded-md font-bold text-lg hover:bg-white/90 transition-all inline-block border-2 border-white">Read Full Manifesto</Link>
           </div>
         </div>
       </section>
@@ -218,7 +246,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-102">
               <Image
                 src="/images/henry-working-ground-level-handpump.jpeg"
                 alt="Henry Katabazi working on a water pump"
@@ -229,7 +257,7 @@ export default function Home() {
                 <p className="text-white p-4 text-sm">Community water project opening ceremony</p>
               </div>
             </div>
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-102">
               <Image
                 src="/images/henry-bw-landscape-sitting.jpeg"
                 alt="Henry Katabazi speaking"
@@ -240,7 +268,7 @@ export default function Home() {
                 <p className="text-white p-4 text-sm">Addressing community concerns</p>
               </div>
             </div>
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-102">
               <Image
                 src="/images/henry-working-office-color-portrait.jpeg"
                 alt="Henry Katabazi in office"
@@ -267,11 +295,11 @@ export default function Home() {
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
                 A country where development is inclusive – reaching rural villages as much as cities – and where our rich cultural heritage and faith guide a new era of progress.
               </p>
-              <p className="text-lg font-bold text-primary dark:text-secondary">
+              <p className="text-lg font-bold text-black dark:text-white border-b-2 border-blue-600 inline-block pb-1">
                 "Uganda for All Ugandans" – regardless of region, religion, or background.
               </p>
             </div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden">
+            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/natural-resources.jpg"
                 alt="Uganda's natural resources"
@@ -295,7 +323,7 @@ export default function Home() {
             </div>
             <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-3">
-                <div className="relative h-48 rounded-lg overflow-hidden">
+                <div className="relative h-48 rounded-lg overflow-hidden shadow-md">
                   <Image
                     src="/images/slider-agriculture.jpg"
                     alt="Agriculture"
@@ -309,7 +337,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col gap-3">
-                <div className="relative h-48 rounded-lg overflow-hidden">
+                <div className="relative h-48 rounded-lg overflow-hidden shadow-md">
                   <Image
                     src="/images/coffee-beans.jpg"
                     alt="Coffee production"
@@ -323,7 +351,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col gap-3">
-                <div className="relative h-48 rounded-lg overflow-hidden">
+                <div className="relative h-48 rounded-lg overflow-hidden shadow-md">
                   <Image
                     src="/images/business-meeting.jpg"
                     alt="Business meeting"
@@ -337,7 +365,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col gap-3">
-                <div className="relative h-48 rounded-lg overflow-hidden">
+                <div className="relative h-48 rounded-lg overflow-hidden shadow-md">
                   <Image
                     src="/images/oil-production.jpg"
                     alt="Oil production"
@@ -359,7 +387,7 @@ export default function Home() {
       <section className="section bg-primary text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden">
+            <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/slider-infra.webp"
                 alt="Infrastructure development"
@@ -374,25 +402,25 @@ export default function Home() {
               </p>
               <ul className="space-y-4">
                 <li className="flex gap-3 items-start">
-                  <div className="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 rounded-full bg-white text-primary flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="font-bold">✓</span>
                   </div>
                   <p>Paving at least 1,000 km of roads per year</p>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 rounded-full bg-white text-primary flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="font-bold">✓</span>
                   </div>
                   <p>Universal access to electricity by 2030</p>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 rounded-full bg-white text-primary flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="font-bold">✓</span>
                   </div>
                   <p>Clean water source for every village</p>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 rounded-full bg-white text-primary flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="font-bold">✓</span>
                   </div>
                   <p>Railway development to transform transport</p>
@@ -407,20 +435,20 @@ export default function Home() {
       <section className="section bg-gray-100 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Join the Movement</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Make a Difference</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
               This campaign is about restoring belief in our nation's leadership and future. It thrives only because of citizens like you who refuse to sit on the sidelines.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact"
-                className="btn-primary text-center"
+                className="bg-gray-900 dark:bg-gray-700 text-white dark:text-white text-center py-4 px-8 text-lg font-bold hover:bg-gray-700 dark:hover:bg-gray-900 transition-all rounded-md inline-block"
               >
                 Volunteer Today
               </Link>
               <Link 
                 href="/manifesto"
-                className="btn-secondary text-center"
+                className="bg-white text-black text-center py-4 px-8 text-lg font-bold hover:bg-opacity-90 transition-all rounded-md inline-block border-2 border-black"
               >
                 Read Our Plans
               </Link>
@@ -430,13 +458,13 @@ export default function Home() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-20 bg-secondary text-primary">
+      <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <svg className="w-12 h-12 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391C14.017 10.707 16.748 8 20.161 8v2c-1.993 0-3.61 1.602-3.61 3.609V21h-2.534zM3.839 21v-7.391C3.839 10.707 6.57 8 9.983 8v2c-1.993 0-3.61 1.602-3.61 3.609V21H3.84z" />
             </svg>
-            <p className="text-2xl md:text-3xl font-bold mb-8">
+            <p className="text-2xl md:text-3xl font-bold mb-8 border-b border-t border-white py-6">
               "I have walked with you, my fellow Ugandans, through many seasons – times of trial and times of triumph. Now I feel called to serve you at the national level."
             </p>
             <p className="font-bold">Henry Byamukama Katabazi</p>

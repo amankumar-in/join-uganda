@@ -18,7 +18,7 @@ export default function Contact() {
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Join the Movement</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Join the Campaign</h1>
             <p className="text-xl text-white/90">Get involved in Henry Katabazi's campaign for a better Uganda</p>
           </div>
         </div>
@@ -234,7 +234,7 @@ export default function Contact() {
       </section>
 
       {/* Call to Action */}
-      <section className="section bg-secondary text-primary">
+      <section className="section bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Together, Let's Build a Better Uganda</h2>
@@ -244,13 +244,13 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/manifesto"
-                className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 text-center"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 text-center"
               >
                 Read Our Manifesto
               </Link>
               <Link 
                 href="/about"
-                className="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 text-center"
+                className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 text-center border-2 border-black"
               >
                 About Henry Katabazi
               </Link>
