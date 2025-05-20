@@ -81,6 +81,7 @@ export default function RootLayout({
                 <h3 className="text-lg font-bold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
                   <li><Link href="/" className="text-sm hover:underline">Home</Link></li>
+                  <li><Link href="/campaign" className="text-sm hover:underline">Campaign</Link></li>
                   <li><Link href="/about" className="text-sm hover:underline">About</Link></li>
                   <li><Link href="/manifesto" className="text-sm hover:underline">Manifesto</Link></li>
                   <li><Link href="/contact" className="text-sm hover:underline">Contact</Link></li>

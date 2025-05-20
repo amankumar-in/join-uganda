@@ -18,6 +18,7 @@ export default function Header() {
             <Link href="/" className="font-medium hover:underline hover:underline-offset-4">Home</Link>
             <Link href="/about" className="font-medium hover:underline hover:underline-offset-4">About</Link>
             <Link href="/manifesto" className="font-medium hover:underline hover:underline-offset-4">Manifesto</Link>
+            <Link href="/campaign" className="font-medium hover:underline hover:underline-offset-4">Campaign</Link>
             <Link href="/contact" className="font-medium hover:underline hover:underline-offset-4">Contact</Link>
           </nav>
           <div className="sm:hidden">
@@ -40,6 +41,7 @@ export default function Header() {
           <Link href="/" className="block px-3 py-2 font-medium" onClick={handleMenuClose}>Home</Link>
           <Link href="/about" className="block px-3 py-2 font-medium" onClick={handleMenuClose}>About</Link>
           <Link href="/manifesto" className="block px-3 py-2 font-medium" onClick={handleMenuClose}>Manifesto</Link>
+          <Link href="/campaign" className="block px-3 py-2 font-medium" onClick={handleMenuClose}>Campaign</Link>
           <Link href="/contact" className="block px-3 py-2 font-medium" onClick={handleMenuClose}>Contact</Link>
         </div>
       </div>
