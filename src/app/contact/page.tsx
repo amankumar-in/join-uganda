@@ -1,7 +1,89 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, FormEvent, useRef, useEffect } from "react";
 
 export default function Contact() {
+  const [formStatus, setFormStatus] = useState({
+    submitted: false,
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Create refs
+  const formRef = useRef<HTMLFormElement>(null);
+  const successMessageRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to success message when it appears
+  useEffect(() => {
+    if (formStatus.submitted && successMessageRef.current) {
+      successMessageRef.current.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
+    }
+  }, [formStatus.submitted]);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    
+    // Set loading state
+    setIsSubmitting(true);
+    
+    // Get form data
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const formEntries = Object.fromEntries(formData.entries());
+    
+    try {
+      // Google Form submission URL
+      const googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSe8GhjEaoZCrB_sKJhxWSgrWdjfmEPscvAoiLmutIAY0eyFqQ/formResponse";
+      
+      // Submit form data to Google Forms
+      await fetch(googleFormUrl, {
+        method: "POST",
+        mode: "no-cors", // Required for Google Forms
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(formEntries as Record<string, string>).toString(),
+      });
+      
+      // Update form status
+      setFormStatus({
+        submitted: true,
+        message: "Thank you for your submission! We'll be in touch soon."
+      });
+      
+      // Reset the form using the ref
+      if (formRef.current) {
+        formRef.current.reset();
+      }
+      
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setFormStatus({
+          submitted: false,
+          message: ""
+        });
+      }, 5000);
+      
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setFormStatus({
+        submitted: true,
+        message: "There was an error submitting the form. Please try again."
+      });
+    } finally {
+      // Reset loading state
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -36,28 +118,41 @@ export default function Contact() {
                   Fill out the form below to join our campaign as a volunteer, request information, or share your ideas for a better Uganda.
                 </p>
                 
-                <form className="space-y-6">
+                {formStatus.submitted && (
+                  <div 
+                    ref={successMessageRef}
+                    className="bg-green-100 text-green-800 p-4 mb-6 rounded-md"
+                  >
+                    {formStatus.message}
+                  </div>
+                )}
+                
+                <form 
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      <label htmlFor="entry.1290881895" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         First Name*
                       </label>
                       <input
                         type="text"
-                        id="firstName"
-                        name="firstName"
+                        id="entry.1290881895"
+                        name="entry.1290881895"
                         className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                         required
                       />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      <label htmlFor="entry.480621437" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Last Name*
                       </label>
                       <input
                         type="text"
-                        id="lastName"
-                        name="lastName"
+                        id="entry.480621437"
+                        name="entry.480621437"
                         className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                         required
                       />
@@ -65,49 +160,49 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.63984862" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Email Address*
                     </label>
                     <input
                       type="email"
-                      id="email"
-                      name="email"
+                      id="entry.63984862"
+                      name="entry.63984862"
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.1931569122" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Phone Number
                     </label>
                     <input
                       type="tel"
-                      id="phone"
-                      name="phone"
+                      id="entry.1931569122"
+                      name="entry.1931569122"
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="district" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.808795266" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       District
                     </label>
                     <input
                       type="text"
-                      id="district"
-                      name="district"
+                      id="entry.808795266"
+                      name="entry.808795266"
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="inquiry" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.870207413" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       How would you like to help?*
                     </label>
                     <select
-                      id="inquiry"
-                      name="inquiry"
+                      id="entry.870207413"
+                      name="entry.870207413"
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                       required
                     >
@@ -121,12 +216,12 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.1883693647" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Message
                     </label>
                     <textarea
-                      id="message"
-                      name="message"
+                      id="entry.1883693647"
+                      name="entry.1883693647"
                       rows={5}
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                     ></textarea>
@@ -135,9 +230,24 @@ export default function Contact() {
                   <div>
                     <button
                       type="submit"
-                      className="w-full bg-primary text-white py-3 px-6 rounded-md font-medium hover:bg-opacity-90 transition-colors"
+                      disabled={isSubmitting}
+                      className={`w-full py-3 px-6 rounded-md font-medium transition-colors flex items-center justify-center ${
+                        isSubmitting 
+                          ? 'bg-primary/70 text-white/80 cursor-not-allowed' 
+                          : 'bg-primary text-white hover:bg-opacity-90'
+                      }`}
                     >
-                      Submit
+                      {isSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Submitting...
+                        </>
+                      ) : (
+                        'Submit'
+                      )}
                     </button>
                   </div>
                 </form>
