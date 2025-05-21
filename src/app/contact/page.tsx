@@ -41,7 +41,7 @@ export default function Contact() {
     
     try {
       // Google Form submission URL
-      const googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSe8GhjEaoZCrB_sKJhxWSgrWdjfmEPscvAoiLmutIAY0eyFqQ/formResponse";
+      const googleFormUrl = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeJRTH780JtPhHt4fMVgdkcMI0N99V_P7T_JZhvw0L9ldrADQ/formResponse";
       
       // Submit form data to Google Forms
       await fetch(googleFormUrl, {
@@ -134,25 +134,25 @@ export default function Contact() {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="entry.1290881895" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      <label htmlFor="entry.820691185" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         First Name*
                       </label>
                       <input
                         type="text"
-                        id="entry.1290881895"
-                        name="entry.1290881895"
+                        id="entry.820691185"
+                        name="entry.820691185"
                         className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                         required
                       />
                     </div>
                     <div>
-                      <label htmlFor="entry.480621437" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      <label htmlFor="entry.1822369001" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Last Name*
                       </label>
                       <input
                         type="text"
-                        id="entry.480621437"
-                        name="entry.480621437"
+                        id="entry.1822369001"
+                        name="entry.1822369001"
                         className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                         required
                       />
@@ -160,49 +160,49 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <label htmlFor="entry.63984862" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.860728593" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Email Address*
                     </label>
                     <input
                       type="email"
-                      id="entry.63984862"
-                      name="entry.63984862"
+                      id="entry.860728593"
+                      name="entry.860728593"
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="entry.1931569122" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.516431070" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Phone Number
                     </label>
                     <input
                       type="tel"
-                      id="entry.1931569122"
-                      name="entry.1931569122"
+                      id="entry.516431070"
+                      name="entry.516431070"
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="entry.808795266" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.1734452111" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       District
                     </label>
                     <input
                       type="text"
-                      id="entry.808795266"
-                      name="entry.808795266"
+                      id="entry.1734452111"
+                      name="entry.1734452111"
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="entry.870207413" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.915679682" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       How would you like to help?*
                     </label>
                     <select
-                      id="entry.870207413"
-                      name="entry.870207413"
+                      id="entry.915679682"
+                      name="entry.915679682"
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                       required
                     >
@@ -216,12 +216,12 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <label htmlFor="entry.1883693647" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="entry.265163760" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Message
                     </label>
                     <textarea
-                      id="entry.1883693647"
-                      name="entry.1883693647"
+                      id="entry.2651637607"
+                      name="entry.265163760"
                       rows={5}
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                     ></textarea>
